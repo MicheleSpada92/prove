@@ -1,0 +1,65 @@
+body {
+    background-color: #101020; /* Colore di sfondo scuro */
+    color: #ffffff; /* Colore del testo bianco */
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    color: #ff00ff; /* Colore del titolo (viola) */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #551a8b; /* Colore del pulsante (viola scuro) */
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#gameArea {
+    width: 1500px;
+    height: 500px; /* Altezza dell'area di gioco */
+    background-color: #000033; /* Colore blu scuro per l'area di gioco */
+    margin: 0 auto; /* Centra l'area di gioco orizzontalmente */
+}
+
+#counter {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.object {
+    width: 70px;
+    height: 60px;
+    position: absolute;
+    animation: moveObject 1s linear infinite alternate;
+}
+
+@keyframes moveObject {
+    100% {
+        /* Impostiamo la posizione finale dell'oggetto */
+        left: calc((100vw - (var(--object-width, 70px))) * var(--x));
+        top: calc((100vh - (var(--object-height, 60px))) * var(--y));
+        right: calc((100vw - (var(--object-width, 70px))) * var(--x));
+        bottom: calc((100vh - (var(--object-height, 60px))) * var(--y));
+    }
+}
+
+
+/* Assegna valori casuali a --x e --y per ogni oggetto */
+.object:nth-child(1) {
+    --x: 0.2; /* Modifica il valore tra 0 e 1 per posizioni casuali */
+    --y: 0.4; /* Modifica il valore tra 0 e 1 per posizioni casuali */
+}
+
+.object:nth-child(2) {
+    --x: 0.6; /* Modifica il valore tra 0 e 1 per posizioni casuali */
+    --y: 0.8; /* Modifica il valore tra 0 e 1 per posizioni casuali */
+}
+
